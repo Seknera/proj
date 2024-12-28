@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+  <h2>Book Catalog</h2>
+  <div>
+    <form action="/add-book" method="POST">
+      <input type="text" name="title" placeholder="Title" required>
+      <input type="text" name="author" placeholder="Author" required>
+      <button type="submit">Add Book</button>
+    </form>
+  </div>
+  <div>
+    <form action="/delete-book" method="POST">
+      <input type="number" name="bookId" placeholder="Book ID to delete" required>
+      <button type="submit">Delete Book</button>
+    </form>
+  </div>
+  <div>
+    <h3>Books List:</h3>
+    <!-- Here you will iterate over books -->
+    <div th:each="book : ${books}">
+      <p th:text="${book.title}"></p>
+      <button th:if="${user.role == 'READER'}" type="submit" name="bookId" value="${book.id}">Reserve</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
