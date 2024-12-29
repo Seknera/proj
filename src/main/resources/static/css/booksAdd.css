@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Минимальная высота страницы — 100% высоты экрана */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Заставляет главный контент занимать всё оставшееся место */
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    position: relative; /* Устанавливаем позицию относительно страницы */
+    bottom: 0;
+    width: 100%;
+}
+
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+main form {
+    display: flex;
+    flex-direction: column;
+}
+
+main form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+main form input,
+main form textarea,
+main form select,
+main form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+main form button:hover {
+    background-color: #45a049;
+}

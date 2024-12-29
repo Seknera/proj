@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+    <link rel="stylesheet" href="/css/books.css">
+</head>
+<body>
+<header>
+    <h1>Библиотека</h1>
+    <nav>
+        <a href="/login">Войти</a>
+        <a href="/registration">Регистрация</a>
+        <a href="/books/add">Добавить книгу</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Список книг</h2>
+        <div class="books-list">
+            <!-- Thymeleaf: динамическое отображение карточек -->
+            <div th:each="book : ${books}" class="book-item">
+                <img th:src="@{'/img/' + ${book.cover_image}}" alt="Обложка книги" class="book-cover">
+                <h3 th:text="${book.title}">Название книги</h3>
+                <p th:text="'Автор: ' + ${book.author.firstNameAuthor} + ' ' + ${book.author.lastNameAuthor}">Автор</p>
+                <p th:text="'Жанр: ' + ${book.genre.genreName}">Жанр</p>
+                <p th:text="'Год публикации: ' + ${book.yearOfPublication}">Год публикации</p>
+                <p th:text="'Кол-во страниц: ' + ${book.numberOfPages}">Количество страниц</p>
+                <p th:text="'Зарезервирована: ' + (${book.isReserved} ? 'Да' : 'Нет')">Зарезервирована</p>
+                <button th:onclick="|window.location.href='/books/view/' + ${book.id}|">Подробнее</button>
+                <form th:action="@{/books/delete/{id}(id=${book.id})}" method="POST">
+                    <button type="submit" class="delete-button">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Библиотека. Все права защищены.</p>
+</footer>
+</body>
+</html>
