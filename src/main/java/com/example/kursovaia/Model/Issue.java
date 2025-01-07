@@ -32,6 +32,7 @@ public class Issue {
     @Column(name = "planned_return_date", nullable = false)
     private Date plannedReturnDate;
 
-    @Column(name = "actual_return_date", nullable = false)
+    @Column(name = "actual_return_date", nullable = true)
     private Date actualReturnDate;
+
 }

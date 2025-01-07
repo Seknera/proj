@@ -3,12 +3,18 @@ package com.example.kursovaia.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "Reader")
-public class Reader {
+public class Reader  implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reader", nullable = false)
@@ -38,5 +44,38 @@ public class Reader {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role = Role.READER;
 
+    // Реализация методов UserDetails
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public String getUsername() {
+        return login; // Поле для авторизации
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true; // Логика проверки
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; // Логика проверки
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true; // Логика проверки
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true; // Логика проверки
+    }
 }
