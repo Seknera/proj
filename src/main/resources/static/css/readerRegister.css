@@ -1,0 +1,99 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f7f9fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Форма */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 1rem;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Добавление пространства между формами */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form input {
+        padding: 10px;
+    }
+
+    form button[type="submit"] {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}

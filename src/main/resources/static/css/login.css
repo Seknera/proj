@@ -1,0 +1,104 @@
+/* Общее оформление для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Оформление формы */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Оформление заголовков и лейблов */
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Оформление полей ввода */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4e9b9e;
+    outline: none;
+}
+
+/* Оформление кнопки */
+button {
+    background-color: #4e9b9e;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3c7e7c;
+}
+
+/* Оформление дополнительных кнопок */
+a {
+    text-decoration: none;
+}
+
+a button {
+    background-color: #f7f7f7;
+    color: #4e9b9e;
+    border: 1px solid #4e9b9e;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+a button:hover {
+    background-color: #4e9b9e;
+    color: white;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+

@@ -1,0 +1,30 @@
+<head>
+  <link rel="stylesheet" href="/css/staffRegister.css">
+</head>
+
+<form action="/register/staff" method="post">
+  <label for="lastName">Фамилия:</label>
+  <input type="text" id="lastName" name="lastName" required><br>
+
+  <label for="firstName">Имя:</label>
+  <input type="text" id="firstName" name="firstName" required><br>
+
+  <label for="middleName">Отчество:</label>
+  <input type="text" id="middleName" name="middleName" required><br>
+
+  <label for="postName">Должность:</label>
+  <select id="postName" name="postName">
+    <option value="1">Библиотекарь</option>
+  </select><br>
+
+  <label for="phoneNumber">Номер телефона:</label>
+  <input type="text" id="phoneNumber" name="phoneNumber" required><br>
+
+  <label for="login">Логин:</label>
+  <input type="text" id="login" name="login" required><br>
+
+  <label for="password">Пароль:</label>
+  <input type="password" id="password" name="password" required><br>
+
+  <button type="submit">Зарегистрироваться</button>
+</form>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Issues</title>
+  <link rel="stylesheet" href="/css/issues.css">
+</head>
+<body>
+<h1>Issue List</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID операции</th>
+    <th>Читатель (id)</th>
+    <th>Книга</th>
+    <th>Дата выдачи</th>
+    <th>Планируемая дата возврата</th>
+    <th>Фактическая дата возврата</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="issue : ${issues}">
+    <td th:text="${issue.id}"></td>
+    <td th:text="${issue.reader.login}"></td>
+    <td th:text="${issue.book.title}"></td>
+    <td th:text="${issue.issueDate}"></td>
+    <td th:text="${issue.plannedReturnDate}"></td>
+    <td th:text="${issue.actualReturnDate != null ? issue.actualReturnDate : 'N/A'}"></td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<!--<a href="/issues/download-pdf">Download PDF</a>-->
+</body>
+</html>
